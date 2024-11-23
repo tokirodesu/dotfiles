@@ -9,7 +9,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
-eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/M365Princess.omp.json)"
+#eval "$(oh-my-posh init zsh --config ~/themes/M365Princess.omp.json)"
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -105,15 +105,18 @@ source $ZSH/oh-my-zsh.sh
 #
 alias vi="nvim"
 alias ..="cd .."
+alias lg="lazygit"
+alias f='cd $(fdfind --type d --hidden --exclude .git --exclude node_module --exclude .cache --exclude .npm --exclude .mozilla --exclude .meteor --exclude .nv | fzf)'
+alias fh='cd ~ && cd $(fdfind --type d --hidden --exclude .git --exclude node_module --exclude .cache --exclude .npm --exclude .mozilla --exclude .meteor --exclude .nv | fzf)'
 alias ll="ls -al"
 alias pip="python3 -m pip"
 alias venv="source venv/bin/activate"
 source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
-source <(fzf --zsh)
+#source <(fzf --zsh)
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVESIZE=10000
 setopt appendhistory
 
 # now load zsh-syntax-highlighting plugin
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
